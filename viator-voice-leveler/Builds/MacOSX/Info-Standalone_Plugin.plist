@@ -8,7 +8,7 @@
     <key>CFBundleIconFile</key>
     <string></string>
     <key>CFBundleIdentifier</key>
-    <string>com.yourcompany.viatorvoiceleveler</string>
+    <string>com.ViatorDSP.viatorvoiceleveler</string>
     <key>CFBundleName</key>
     <string>viator-voice-leveler</string>
     <key>CFBundleDisplayName</key>

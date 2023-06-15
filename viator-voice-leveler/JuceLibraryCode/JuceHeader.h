@@ -44,7 +44,7 @@
 namespace ProjectInfo
 {
     const char* const  projectName    = "viator-voice-leveler";
-    const char* const  companyName    = "";
+    const char* const  companyName    = "Viator DSP";
     const char* const  versionString  = "1.0.0";
     const int          versionNumber  = 0x10000;
 }

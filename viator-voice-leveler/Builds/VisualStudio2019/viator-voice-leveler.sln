@@ -1,0 +1,39 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio Version 16
+
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "viator-voice-leveler - Standalone Plugin", "viator-voice-leveler_StandalonePlugin.vcxproj", "{9C995FFE-C232-1AD8-B8AB-3DE842BC0F69}"
+	ProjectSection(ProjectDependencies) = postProject
+		{0DA53C86-C9F3-17AC-BFFA-21574227660B} = {0DA53C86-C9F3-17AC-BFFA-21574227660B}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "viator-voice-leveler - VST3", "viator-voice-leveler_VST3.vcxproj", "{024DCEA5-240B-816B-F2B3-F1E8380CFD39}"
+	ProjectSection(ProjectDependencies) = postProject
+		{0DA53C86-C9F3-17AC-BFFA-21574227660B} = {0DA53C86-C9F3-17AC-BFFA-21574227660B}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "viator-voice-leveler - Shared Code", "viator-voice-leveler_SharedCode.vcxproj", "{0DA53C86-C9F3-17AC-BFFA-21574227660B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x64 = Debug|x64
+		Release|x64 = Release|x64
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{024DCEA5-240B-816B-F2B3-F1E8380CFD39}.Debug|x64.ActiveCfg = Debug|x64
+		{024DCEA5-240B-816B-F2B3-F1E8380CFD39}.Debug|x64.Build.0 = Debug|x64
+		{024DCEA5-240B-816B-F2B3-F1E8380CFD39}.Release|x64.ActiveCfg = Release|x64
+		{024DCEA5-240B-816B-F2B3-F1E8380CFD39}.Release|x64.Build.0 = Release|x64
+		{9C995FFE-C232-1AD8-B8AB-3DE842BC0F69}.Debug|x64.ActiveCfg = Debug|x64
+		{9C995FFE-C232-1AD8-B8AB-3DE842BC0F69}.Debug|x64.Build.0 = Debug|x64
+		{9C995FFE-C232-1AD8-B8AB-3DE842BC0F69}.Release|x64.ActiveCfg = Release|x64
+		{9C995FFE-C232-1AD8-B8AB-3DE842BC0F69}.Release|x64.Build.0 = Release|x64
+		{0DA53C86-C9F3-17AC-BFFA-21574227660B}.Debug|x64.ActiveCfg = Debug|x64
+		{0DA53C86-C9F3-17AC-BFFA-21574227660B}.Debug|x64.Build.0 = Debug|x64
+		{0DA53C86-C9F3-17AC-BFFA-21574227660B}.Release|x64.ActiveCfg = Release|x64
+		{0DA53C86-C9F3-17AC-BFFA-21574227660B}.Release|x64.Build.0 = Release|x64
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
