@@ -72,8 +72,6 @@ private:
     juce::dsp::ProcessSpec _spec;
     
     juce::dsp::Gain<float> _gainModule;
-    juce::dsp::Gain<float> _gainCompensationModule;
-    juce::dsp::Gain<float> _limiterCompensationModule;
     juce::dsp::Gain<float> _volumeModule;
     juce::dsp::Limiter<float> _limiterModule;
     juce::dsp::Compressor<float> _compressorModule;

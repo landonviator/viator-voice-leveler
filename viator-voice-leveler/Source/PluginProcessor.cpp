@@ -160,20 +160,11 @@ void ViatorvoicelevelerAudioProcessor::updateParameters()
     auto gain = _treeState.getRawParameterValue(ViatorParameters::inputID)->load();
     auto volume = _treeState.getRawParameterValue(ViatorParameters::outputID)->load();
     auto leveler = _treeState.getRawParameterValue(ViatorParameters::levelID)->load();
-    auto levelerScaled = juce::jmap(leveler, 0.0f, 100.0f, 0.0f, -30.0f);
+    auto levelerScaled = juce::jmap(leveler, 0.0f, 100.0f, 0.0f, 20.0f);
     
     // update
-    _gainModule.setGainDecibels(gain);
-    
-//    _compressorModule.setThreshold(thresh);
-//    _compressorModule.setRatio(ratio);
-//    _compressorModule.setAttack(attack);
-//    _compressorModule.setRelease(release);
-    
-    _limiterModule.setThreshold(levelerScaled);
-    _limiterCompensationModule.setGainDecibels(levelerScaled);
-    
-    _volumeModule.setGainDecibels(volume);
+    _gainModule.setGainDecibels(gain + levelerScaled);
+    _volumeModule.setGainDecibels(volume - levelerScaled * 0.5);
 }
 
 //==============================================================================
@@ -188,8 +179,7 @@ void ViatorvoicelevelerAudioProcessor::prepareToPlay (double sampleRate, int sam
     
     _limiterModule.prepare(_spec);
     _limiterModule.setRelease(50.0);
-    _limiterCompensationModule.prepare(_spec);
-    _limiterCompensationModule.setRampDurationSeconds(0.02);
+    _limiterModule.setThreshold(-0.1);
     
     _volumeModule.prepare(_spec);
     _volumeModule.setRampDurationSeconds(0.02);
@@ -241,7 +231,6 @@ void ViatorvoicelevelerAudioProcessor::processBlock (juce::AudioBuffer<float>& b
     
     // limiter
     _limiterModule.process(juce::dsp::ProcessContextReplacing<float>(block));
-    _limiterCompensationModule.process(juce::dsp::ProcessContextReplacing<float>(block));
     
     // volume
     _volumeModule.process(juce::dsp::ProcessContextReplacing<float>(block));
