@@ -4,11 +4,13 @@
 
 namespace viator_gui
 {
-class Dial  : public juce::Component
+
+class Dial  : public juce::Slider
 {
 public:
     
     Dial (const juce::String& sliderName);
+    Dial (const juce::String& sliderName, const juce::Image& filmStrip);
     ~Dial() override;
     
     void paint (juce::Graphics&) override;
@@ -32,9 +34,11 @@ public:
     };
     
     void setDialValueType(viator_gui::CustomDial::ValueType newValueType);
+    void setDialValueType(viator_gui::CustomDialLabel::ValueType newValueType);
 
 private:
     viator_gui::CustomDial _customDial;
+    viator_gui::CustomDialLabel customDialLabelLAF;
     juce::Slider dial;
     
 private:
@@ -47,6 +51,11 @@ private:
     juce::Colour _auxBackgroundColor = _mainBackgroundColor.darker(1.0);
     juce::Colour _auxTextColor = juce::Colour::fromRGB(74, 81, 98).darker(0.5);
     juce::Colour _blackBackgroundColor = juce::Colour::fromRGB(33, 35, 37);
+    
+    const int _numFrames = 129;
+    int frameWidth;
+    int frameHeight;
+    juce::Image _filmStrip;
     
 }; // class
 }// namespace viator_gui

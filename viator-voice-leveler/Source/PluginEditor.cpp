@@ -11,8 +11,8 @@ ViatorvoicelevelerAudioProcessorEditor::ViatorvoicelevelerAudioProcessorEditor (
     for (int i = 0; i < _numPluginDials; i++)
     {
         _pluginDials.add(std::make_unique<viator_gui::Dial>(_pluginDialNames[i]));
-        _pluginSliderAttachments.add(std::make_unique<juce::AudioProcessorValueTreeState::SliderAttachment>(audioProcessor._treeState, audioProcessor._parameterMap.getPluginSliderParams()[i].paramID, _pluginDials[i]->getSlider()));
-        _pluginDials[i]->getSlider().setTextValueSuffix(" %");
+        _pluginSliderAttachments.add(std::make_unique<juce::AudioProcessorValueTreeState::SliderAttachment>(audioProcessor._treeState, audioProcessor._parameterMap.getPluginSliderParams()[i].paramID, *_pluginDials[i]));
+        _pluginDials[i]->setTextValueSuffix(" %");
         addAndMakeVisible(*_pluginDials[i]);
     }
     
@@ -20,7 +20,7 @@ ViatorvoicelevelerAudioProcessorEditor::ViatorvoicelevelerAudioProcessorEditor (
     for (int i = 0; i < _numIODials; i++)
     {
         _ioDials.add(std::make_unique<viator_gui::Dial>(_ioDialNames[i]));
-        _ioSliderAttachments.add(std::make_unique<juce::AudioProcessorValueTreeState::SliderAttachment>(audioProcessor._treeState, audioProcessor._parameterMap.getIOSliderParams()[i].paramID, _ioDials[i]->getSlider()));
+        _ioSliderAttachments.add(std::make_unique<juce::AudioProcessorValueTreeState::SliderAttachment>(audioProcessor._treeState, audioProcessor._parameterMap.getIOSliderParams()[i].paramID, *_ioDials[i]));
         addAndMakeVisible(*_ioDials[i]);
     }
     
@@ -154,7 +154,7 @@ void ViatorvoicelevelerAudioProcessorEditor::setBackgroundStyle(juce::Graphics &
 {
     juce::Colour bgColor = _theme.getMainBackgroundColor();
     juce::Rectangle<int> rect = getLocalBounds();
-    viator_utils::gui_utils::Gradient::addRadialGradient(g, bgColor, rect, viator_utils::gui_utils::Gradient::RectShape::kSquared);
+    viator_utils::Gradient::addRadialGradient(g, bgColor, rect, viator_utils::Gradient::RectShape::kSquared);
 }
 
 #pragma mark Settings
