@@ -72,12 +72,17 @@ jobs:
       - name: Delete .a files
         run: rm -R viator-voice-leveler/Builds/MacOSX/build/Release/libviator-voice-leveler.a
 
-      - name: Sign Mac Builds
+      - name: Zip Mac Builds
+        run: |
+          zip -r viator-voice-leveler-au.zip ~/Library/Audio/Plug-Ins/Components/viator-voice-leveler.component  || exit 1
+          zip -r viator-voice-leveler-vst3.zip ~/Library/Audio/Plug-Ins/VST3/viator-voice-leveler.vst3  || exit 1
+
+      - name: Sign Mac Zips
         env:
           HASH_OF_DEVELOPER_ID_APPLICATION: ${{ secrets.HASH_OF_DEVELOPER_ID_APPLICATION }}
         run: |
-          codesign --deep --force --options=runtime --sign "$HASH_OF_DEVELOPER_ID_APPLICATION" --timestamp ~/Library/Audio/Plug-Ins/Components/viator-voice-leveler.component
-          codesign --deep --force --options=runtime --sign "$HASH_OF_DEVELOPER_ID_APPLICATION" --timestamp ~/Library/Audio/Plug-Ins/VST3/viator-voice-leveler.vst3
+            codesign --deep --force --options=runtime --sign "$HASH_OF_DEVELOPER_ID_APPLICATION" --timestamp viator-voice-leveler-au.zip  || exit 1
+            codesign --deep --force --options=runtime --sign "$HASH_OF_DEVELOPER_ID_APPLICATION" --timestamp viator-voice-leveler-vst3.zip  || exit 1
 
       - name: Notarize Mac
         env:
