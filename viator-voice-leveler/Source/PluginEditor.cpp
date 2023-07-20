@@ -53,6 +53,8 @@ ViatorvoicelevelerAudioProcessorEditor::~ViatorvoicelevelerAudioProcessorEditor(
 
 void ViatorvoicelevelerAudioProcessorEditor::paint (juce::Graphics& g)
 {
+    _theme.setCurrentTheme(ViatorThemes::ViatorThemeData::Theme::kVaporWave);
+    
     // background style
     setBackgroundStyle(g);
     

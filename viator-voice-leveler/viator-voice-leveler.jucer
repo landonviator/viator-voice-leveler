@@ -6,6 +6,15 @@
   <MAINGROUP id="kZyZGq" name="viator-voice-leveler">
     <GROUP id="{1635C38E-BF62-C8E6-7AF8-BEF11CEA447D}" name="Source">
       <GROUP id="{FBEC1EFC-CF61-8BD7-12CC-6CA4846CED18}" name="Assets">
+        <GROUP id="{FF726326-3F2B-6D01-F3E4-583874724E4F}" name="vu-meter">
+          <FILE id="bRmgeG" name="back_vu-meter_decore5.png" compile="0" resource="1"
+                file="Source/Assets/vu-meter/back_vu-meter_decore5.png"/>
+          <FILE id="YuDvG1" name="scale_vu-meter.png" compile="0" resource="1"
+                file="Source/Assets/vu-meter/scale_vu-meter.png"/>
+          <FILE id="PR7SoT" name="scale_vu-meterno_name.png" compile="0" resource="1"
+                file="Source/Assets/vu-meter/scale_vu-meterno_name.png"/>
+          <FILE id="wYnuUq" name="vu_meter.png" compile="0" resource="1" file="Source/Assets/vu-meter/vu_meter.png"/>
+        </GROUP>
         <FILE id="jOUb8x" name="landon.png" compile="0" resource="1" file="Source/Assets/landon.png"/>
       </GROUP>
       <GROUP id="{463512EB-29CF-E256-EF1A-83678DCAAD59}" name="components">

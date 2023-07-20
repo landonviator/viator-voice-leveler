@@ -33,7 +33,7 @@ namespace ViatorThemes
                 
             case Theme::kLofi:
             {
-                _mainBackgroundColor = juce::Colour::fromRGB(44, 48, 69);
+                _mainBackgroundColor = juce::Colours::black.brighter(0.1);
                 _mainTextColor = juce::Colour::fromRGB(233, 138, 235).withAlpha(0.75f);
                 _widgetFillColor = juce::Colour::fromRGB(190, 147, 251).withAlpha(0.8f);
                 _auxBackgroundColor = juce::Colour::fromRGB(24, 25, 26);

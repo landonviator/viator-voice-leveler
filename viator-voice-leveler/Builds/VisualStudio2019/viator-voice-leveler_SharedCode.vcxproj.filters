@@ -2,6 +2,9 @@
 
 <Project ToolsVersion="16.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
+    <Filter Include="viator-voice-leveler\Source\Assets\vu-meter">
+      <UniqueIdentifier>{DB01422C-3D50-2C80-FE61-8A795D97FDE9}</UniqueIdentifier>
+    </Filter>
     <Filter Include="viator-voice-leveler\Source\Assets">
       <UniqueIdentifier>{C5A5406B-1B2E-F9A0-C135-9376A373CE8A}</UniqueIdentifier>
     </Filter>
@@ -3118,6 +3121,9 @@
     <ClCompile Include="..\..\JuceLibraryCode\BinaryData.cpp">
       <Filter>JUCE Library Code</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\JuceLibraryCode\BinaryData2.cpp">
+      <Filter>JUCE Library Code</Filter>
+    </ClCompile>
     <ClCompile Include="..\..\JuceLibraryCode\include_juce_audio_basics.cpp">
       <Filter>JUCE Library Code</Filter>
     </ClCompile>
@@ -6116,6 +6122,18 @@
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
+    <None Include="..\..\Source\Assets\vu-meter\back_vu-meter_decore5.png">
+      <Filter>viator-voice-leveler\Source\Assets\vu-meter</Filter>
+    </None>
+    <None Include="..\..\Source\Assets\vu-meter\scale_vu-meter.png">
+      <Filter>viator-voice-leveler\Source\Assets\vu-meter</Filter>
+    </None>
+    <None Include="..\..\Source\Assets\vu-meter\scale_vu-meterno_name.png">
+      <Filter>viator-voice-leveler\Source\Assets\vu-meter</Filter>
+    </None>
+    <None Include="..\..\Source\Assets\vu-meter\vu_meter.png">
+      <Filter>viator-voice-leveler\Source\Assets\vu-meter</Filter>
+    </None>
     <None Include="..\..\Source\Assets\landon.png">
       <Filter>viator-voice-leveler\Source\Assets</Filter>
     </None>
