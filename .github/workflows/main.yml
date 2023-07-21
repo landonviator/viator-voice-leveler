@@ -77,7 +77,7 @@ jobs:
           zip -r viator-voice-leveler-au.zip ~/Library/Audio/Plug-Ins/Components/viator-voice-leveler.component  || exit 1
           zip -r viator-voice-leveler-vst3.zip ~/Library/Audio/Plug-Ins/VST3/viator-voice-leveler.vst3  || exit 1
 
-      - name: Sign Mac Zips
+      - name: Sign Mac zips
         env:
           HASH_OF_DEVELOPER_ID_APPLICATION: ${{ secrets.HASH_OF_DEVELOPER_ID_APPLICATION }}
         run: |
