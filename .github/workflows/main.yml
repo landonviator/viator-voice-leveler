@@ -72,12 +72,19 @@ jobs:
       - name: Delete .a files
         run: rm -R viator-voice-leveler/Builds/MacOSX/build/Release/libviator-voice-leveler.a
 
+      - name: Sign Mac Builds
+        env:
+          HASH_OF_DEVELOPER_ID_APPLICATION: ${{ secrets.HASH_OF_DEVELOPER_ID_APPLICATION }}
+        run: |
+          codesign --deep --force --options=runtime --sign "$HASH_OF_DEVELOPER_ID_APPLICATION" --timestamp ~/Library/Audio/Plug-Ins/Components/viator-voice-leveler.component  || exit 1
+          codesign --deep --force --options=runtime --sign "$HASH_OF_DEVELOPER_ID_APPLICATION" --timestamp ~/Library/Audio/Plug-Ins/VST3/viator-voice-leveler.vst3  || exit 1
+
       - name: Zip Mac Builds
         run: |
           zip -r viator-voice-leveler-au.zip ~/Library/Audio/Plug-Ins/Components/viator-voice-leveler.component  || exit 1
           zip -r viator-voice-leveler-vst3.zip ~/Library/Audio/Plug-Ins/VST3/viator-voice-leveler.vst3  || exit 1
 
-      - name: Sign Mac zips
+      - name: Sign Mac Zips
         env:
           HASH_OF_DEVELOPER_ID_APPLICATION: ${{ secrets.HASH_OF_DEVELOPER_ID_APPLICATION }}
         run: |
@@ -151,4 +158,3 @@ jobs:
         with:
           name: Windows-viator-voice-leveler-VST3-Artifact
           path: viator-voice-leveler\Builds\VisualStudio2019\x64\Release\VST3\
-
